@@ -1,0 +1,56 @@
+{% extends 'quotes/base.html' %}
+
+{% block content %}
+<main class="container">
+    <div class="blockquote">
+        {% for quote in quotes %}
+            <hr>
+            <div>
+                {{ quote.quote }}
+                <footer class="author">
+                    <cite>—
+                        <a href="/author/{{ quote.author }}">{{ quote.author }}</a>
+                    </cite>
+                </footer>
+            </div>
+
+            <div class="tags">
+                Tags:
+                {% for tag in quote.tags.all %}
+                    <a href="/tag/{{ tag.name }}" class="tag">{{ tag.name }}</a>
+                {% endfor %}
+            </div>
+
+            <div class="del-btn-container">
+                {% if request.user == quote.user %}
+                <form action="{% url 'quotes:delete_quote' quote.id %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="next" value="{{ request.get_full_path }}">
+                    <input type="hidden" name="page" value="{{ quotes.number }}">
+                    <button type="submit" class="delete-button">Delete</button>
+                </form>
+                {% endif %}
+            </div>
+            <hr>
+
+        {% endfor %}
+    </div>
+
+    <nav>
+        <ul class="pager">
+            <li class="previous">
+                <a class="{% if not quotes.has_previous %}secondary{% endif %}"
+                   href="{% if quotes.has_previous %} {% url 'quotes:root_paginate' quotes.previous_page_number %} {% else %}#{% endif %}">
+                    <span>← </span>Previous
+                </a>
+            </li>
+            <li class="next">
+                <a class="{% if not quotes.has_next %}secondary{% endif %}"
+                   href="{% if quotes.has_next %} {% url 'quotes:root_paginate' quotes.next_page_number %} {% else %}#{% endif %}">
+                    Next <span>→</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</main>
+{% endblock %}

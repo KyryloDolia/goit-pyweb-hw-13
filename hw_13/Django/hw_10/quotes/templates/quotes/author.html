@@ -1,0 +1,16 @@
+{% extends 'quotes/base.html' %}
+
+{% block content %}
+<div class="author-container">
+    <hr>
+    <h3 class="author-title">{{ author.fullname }}</h3>
+    <hr>
+    <p><strong class="accent">Born: </strong>{{ author.born_date }}</p>
+
+    <div class="descr-accent">
+        <strong class="accent">Description:</strong>
+    </div>
+    <p>{{ author.description }}</p>
+
+</div>
+{% endblock %}

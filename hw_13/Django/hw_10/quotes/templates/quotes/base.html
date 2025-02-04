@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.cyan.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.colors.min.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'quotes/style.css' %}"/>
+    <title>Homework</title>
+</head>
+<body>
+<header>
+    <div class="header-container">
+        <h1 class="header">
+            <a href="/">Quotes to Scrape</a>
+        </h1>
+        <div class="btn-container">
+            {% if user.is_authenticated %}
+                <button class="add-button" onclick="window.location.href='{% url 'quotes:new' %}';">
+                    New
+                </button>
+                <a href="{% url 'users:logout' %}" class="btn">Logout</a>
+            {% else %}
+                <a href="{% url 'users:login' %}" class="btn">Login</a>
+                <a href="{% url 'users:signup' %}" class="btn">Register</a>
+            {% endif %}
+        </div>
+    </div>
+</header>
+
+
+{% block content %}{% endblock %}
+</body>
+</html>

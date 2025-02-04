@@ -1,0 +1,205 @@
+html {
+    scrollbar-gutter: stable;
+}
+
+
+header {
+    height: 100%;
+    align-items: center;
+    margin-top: 19px;
+}
+
+
+.header-container {
+    display: flex;
+    justify-self: center;
+    justify-content: space-between;
+    align-items: center;
+    width: 970px;
+    height: 100%;
+}
+
+.add-button{
+    font-size: 16px;
+    padding: 5px 10px;
+    margin-right: 7px;
+    width: 60px;
+}
+
+
+.header {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+h1 {
+    margin: 0;
+}
+
+h1 a{
+    color: #3DECEB;
+}
+
+.tags {
+    margin-top: 9px;
+}
+
+.tag {
+    margin-left: 9px;
+    color: #25DDDD;
+}
+
+
+.author {
+    margin-top: 5px
+}
+
+
+a {
+    text-decoration: none;
+}
+
+
+nav {
+    width: 100%;
+    margin-top: 19px;
+}
+
+
+.pager {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+.pager .secondary {
+    pointer-events: none;
+}
+
+
+
+
+
+.btn-container a {
+    margin: 18px;
+}
+
+
+.btn {
+    color: #0AC2C2;
+}
+
+.btn:hover {
+    color: #58FAF9;
+}
+
+
+.tool-bar-container {
+    display: flex;
+    justify-content:center;
+    align-items: center
+}
+
+.tool-bar-container button{
+    margin-left: 14px;
+    margin-right: 14px;
+}
+
+
+main.container {
+    width: 700px;
+    margin-left: 208px;
+    padding: 0;
+    font-size: 18px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.author-link {
+    color: #909EBE;
+}
+
+.author-container {
+    width: 750px;
+    margin-left: 208px;
+    padding: 0;
+
+.author-container .author-descr {
+    margin-bottom: 100px;
+}
+
+
+}
+
+.author-title {
+    margin-bottom: 28px;
+}
+
+.author-descr {
+    margin-bottom 100px;
+}
+
+.descr-accent {
+    margin-bottom: 9px;
+}
+
+
+.new-container {
+    margin-top: 90px;
+    justify-self: center;
+    width: 700px;
+}
+
+
+textarea {
+    height: 140px;
+}
+
+textarea::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* users */
+
+.title-container {
+    margin-top: 23px;
+    justify-self: center;
+}
+
+.form-container {
+    justify-self: center;
+    width: 50%;
+}
+
+.error-msg {
+    justify-self: center;
+    color: red;
+}
+
+.del-btn-container {
+    width: 70px;
+    margin-top: 16px;
+    justify-content: flex-end;
+}
+
+.delete-button {
+    font-size: 16px;
+    background-color: #c52f21;
+    padding: 5px 10px;
+    border-color: #c52f21;
+}
+
+.delete-button:hover {
+    background-color: #d93526;
+}
+
+
